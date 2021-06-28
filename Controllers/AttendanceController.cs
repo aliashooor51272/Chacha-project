@@ -84,7 +84,7 @@ namespace Chacha_project.Controllers
             }
             return RedirectToAction("index");
         }
-        public IActionResult AttendanceAdd()
+        public IActionResult  AttendanceAdd()
         {
             return View();
         }

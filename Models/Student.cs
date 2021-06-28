@@ -12,7 +12,7 @@ namespace Chacha_project.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string StudentName { get; set; }
+        public string  StudentName { get; set; }
         [Required]
         public string FatherName { get; set; }
         [Required]

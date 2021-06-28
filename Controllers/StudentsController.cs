@@ -20,14 +20,14 @@ namespace Chacha_project.Controllers
 
         
         [HttpGet]
-        public IActionResult Index()//
+        public IActionResult  Index()//
 
         {
             var list = _db.Students.ToList(); 
             return View(list);
         }
         [HttpGet]
-        public IActionResult AddStudent()
+        public IActionResult  AddStudent()
         {
             return View();
         }

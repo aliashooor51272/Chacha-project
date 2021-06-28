@@ -16,7 +16,7 @@ namespace Chacha_project.Models
        
 
         
-        public DbSet<Student> Students { get; set; }
+        public DbSet<Student>  Students { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
      
     
