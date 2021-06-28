@@ -34,11 +34,13 @@ namespace Chacha_project.Controllers
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
+
             _db.Students.Add(student);
             _db.SaveChanges();
             return RedirectToAction("Index");
 
         }
+       
         [HttpGet]
         public IActionResult Edit(int id)
         {
