@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Chacha_project.Models.Attendance>
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    h1 {
+        font-family: Arial;
+        text-align: center;
+    }
+
+    .ggg td {
+        display: flex;
+    }
+</style>
+
+<h1>Attendance Lists</h1>
+<p class="mr-5">
+
+    <a asp-action="AddAttendance" class="btn btn-bordered btn-success mb-2">Add Attendance</a>
+</p>
+
+<table class="table table-bordered table-success" id="MyTable">
+    <thead class="thead-light">
+        <tr>
+
+            <th scope="col">AttendanceId</th>
+            <th scope="col">Present</th>
+            <th scope="col">Absent</th>
+            <th scope="col">Leave</th>
+            <th scope="col">EnterTime</th>
+
+            <th scope="col">Action</th>
+
+        </tr>
+
+    </thead>
+
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AttendenceId</td>
+                <td>@item.Absent</td>
+                <td>@item.Present</td>
+                <td>@item.EnterTime</td>
+                <td>@item.Leaves</td>
+
+
+
+                <td class="ggg">
+                    <a asp-action="Edit" class="btn btn-bordered btn-success mb-2" onclick="return confirm('Are you sure to update')" asp-route-id="@item.AttendenceId">Edit</a>
+
+                    <a asp-action="Delete" class="btn btn-bordered btn-danger" onclick="return confirm('Are you sure to Delete')" asp-route-id="@item.AttendenceId">Delete</a>
+
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
+

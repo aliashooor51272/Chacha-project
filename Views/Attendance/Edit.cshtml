@@ -1,0 +1,53 @@
+﻿@model Chacha_project.Models.Attendance
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit Attendence</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AttendenceId" />
+            <div class="form-group">
+                <label asp-for="AttendenceId" class="control-label"></label>
+                <input asp-for="AttendenceId" class="form-control" />
+                <span asp-validation-for="AttendenceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Present" class="control-label"></label>
+                <input asp-for="Present" class="form-control" />
+                <span asp-validation-for="Present" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Absent" class="control-label"></label>
+                <input asp-for="Absent" class="form-control" />
+                <span asp-validation-for="Absent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leaves" class="control-label"></label>
+                <input asp-for="Leaves" class="form-control" />
+                <span asp-validation-for="Leaves" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnterTime" class="control-label"></label>
+                <input asp-for="EnterTime" class="form-control" />
+                <span asp-validation-for="EnterTime" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List"</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

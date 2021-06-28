@@ -1,0 +1,86 @@
+﻿@model Chacha_project.Models.Attendance
+@{
+    ViewData["Title"] = "AddAttendance";
+}
+<style>
+    h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+        font-size: 24px;
+    }
+</style>
+<section class="content" id="attendancebyclass-container">
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="card border-top-primary border-left-primary">
+                <div class="card-title">
+                    <div class="col-12">
+                        <h3>Add Attendance</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="AddAttendance">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                <label for="Student Name">Attendance Id</label>
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control" placeholder="Attendance Id" asp-for="AttendenceId">
+                                    <div class="form-control-feedback bg-dark bgwidth ">
+                                        <i class="icon-sort-numberic-desc iconwidth"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                <label for="Father Name">Present</label>
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control" placeholder="Present" asp-for="Present">
+                                    <div class="form-control-feedback bg-dark bgwidth ">
+                                        <i class="icon-sort-numberic-desc iconwidth"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                <label for="Student Relation">Absent</label>
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control" placeholder="Absent" asp-for="Absent">
+                                    <div class="form-control-feedback bg-dark bgwidth ">
+                                        <i class="icon-sort-numberic-desc iconwidth"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                <label for="Email">Leave</label>
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control" placeholder="Leave" asp-for="Leaves">
+                                    <div class="form-control-feedback bg-dark bgwidth ">
+                                        <i class="icon-sort-numberic-desc iconwidth"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                <label for="Religion">EnterTime</label>
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control" placeholder="EnterTime" asp-for="EnterTime">
+                                    <div class="form-control-feedback bg-dark bgwidth ">
+                                        <i class="icon-sort-numberic-desc iconwidth"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-sm-12 ">
+                                <a asp-action="Index" class="btn btn-info float-left ">Back to List</a>
+                                <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-sm-12">   <input type="submit" value="Create" class="btn btn-primary float-right"></div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</section>

@@ -1,0 +1,142 @@
+﻿@model IEnumerable<Chacha_project.Models.Student>
+@{
+    ViewData["Title"] = "AttendanceAdd";
+}
+
+<div class="header-elements py-0">
+    <div class="breadcrumb">
+        <a href="@Url.Action("Index","Home")" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Dashboard</a>
+        <span class="breadcrumb-item active">Attendance By Class</span>
+    </div>
+</div>
+<section class="content" id="attendancebyclass-container">
+    <div class="row ">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="card border-top-primary border-left-primary">
+                <div class="card-header bg-white header-elements-inline">
+                    <h4 class="card-title"><i class="icon-search4"></i> Select Criteria</h4>
+                    <div class="header-elements">
+                        <div class="list-icons">
+                            <a class="list-icons-item" data-action="collapse"></a>
+                            <a class="list-icons-item ui-sortable-handle" data-action="move"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 col-lg-12 col-xl-12 mt-3  form-group has-feedback" id="campus-control">
+                    <label for="basicinput">Campus</label>
+                    <div class="form-group form-group-feedback form-group-feedback-left">
+                        <select class="form-control chosen has-feedback-left" id="attendanceType" name="AttendanceType" placeholder="enter name here.">
+                            <option value="1">Campus 1</option>
+                            <option value="2">Leading Private School</option>
+                            <option value="3">Preston</option>
+                        </select>
+                        <div class="form-control-feedback bg-dark bgwidth ">
+                            <i class="icon-city iconwidth"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 col-lg-12 col-xl-12 form-group has-feedback" id="class-control">
+                    <label for="basicinput">Classes</label>
+                    <div class="form-group form-group-feedback form-group-feedback-left">
+                        <select class="form-control chosen has-feedback-left" id="attendanceType" name="AttendanceType" placeholder="enter name here.">
+                            <option value="1">Nursery</option>
+                            <option value="2">Prep.</option>
+                            <option value="3">One</option>
+                            <option value="1">Two</option>
+                            <option value="2">Three</option>
+                            <option value="3">4th</option>
+                            <option value="1">5th</option>
+                            <option value="2">6th</option>
+                            <option value="3">7th</option>
+                            <option value="1">8th</option>
+                            <option value="2">9th</option>
+                            <option value="3">10th</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">Senior 10th</option>
+                            <option value="1">Pre 9th</option>
+                            <option value="2">3rd Year</option>
+                            <option value="3">BsCe</option>
+                        </select>
+                        <div class="form-control-feedback bg-dark bgwidth ">
+                            <i class="icon-home8 iconwidth"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 col-lg-12 col-xl-12 form-group has-feedback" id="section-control">
+                    <label for="basicinput">Sections</label>
+                    <div class="form-group form-group-feedback form-group-feedback-left">
+                        <select class="form-control chosen has-feedback-left" id="attendanceType" name="AttendanceType" placeholder="enter name here.">
+                            <option value="1">A</option>
+                            <option value="2">C</option>
+                        </select>
+                        <div class="form-control-feedback bg-dark bgwidth ">
+                            <i class="icon-tree6 iconwidth"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-6 col-md-12 col-lg-12 col-xl-12 form-group has-feedback">
+                    <label>Date</label>
+                    <div class="form-group form-group-feedback form-group-feedback-left">
+                        <input class="time form-control has-feedback-left" id="selectdate" name="Time" required="" type="date" value="">
+                        <div class="form-control-feedback bg-dark bgwidth ">
+                            <i class="icon-calendar iconwidth"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2 col-md-12 mb-2 mr-4">
+                    <button class="btn float-right  mr-4 btn-info" id="search"><i class="icon-search4"></i> Search</button>
+                </div>
+            </div>
+        </div>
+        <div class=" col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div class="card  border-top-primary border-left-primary">
+                <div class="card-header bg-white header-elements-inline">
+                    <h4 class="card-title"><i class="icon-list2 iconwidth"></i>   Student Attandances List</h4>
+                    <div class="header-elements">
+                        <div class="list-icons">
+                            <a class="list-icons-item" data-action="collapse"></a>
+                            <a class="list-icons-item ui-sortable-handle" data-action="move"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="message"></div>
+                        </div>
+                        <div id="classfeegroup-gridContainer" class="col-12">
+                            <table id="jqgclassFeeGroup" cellpadding="0" cellspacing="0"></table>
+                            <div id="jqgpclassFeeGroup" style="text-align:center;">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-12 col-lg-12 col-xl-12 form-group has-feedback">
+                            <label>Attendance</label>
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <select class="form-control chosen has-feedback-left" id="attendanceType" name="AttendanceType" placeholder="enter name here.">
+                                    <option value="1">Present           </option>
+                                    <option value="2">Absent            </option>
+                                    <option value="3">Leave             </option>
+                                    <option value="4">LateComing        </option>
+                                </select>
+                                <div class="form-control-feedback bg-dark bgwidth ">
+                                    <i class="icon-users iconwidth"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <button type="button" id="SaveShortLeave" class="btn btn-info float-right"><i class="icon-box-add"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

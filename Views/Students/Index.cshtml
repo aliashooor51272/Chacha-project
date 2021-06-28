@@ -1,0 +1,222 @@
+﻿@model IEnumerable<Chacha_project.Models.Student>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="content" id="attendancebyclass-container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add Student
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+
+                <style>
+                    h3 {
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                        text-align: center;
+                        font-size: 24px;
+                    }
+                </style>
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        <div class="card border-top-primary border-left-primary">
+                            <div class="card-title">
+                                <div class="col-12">
+
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form method="post" asp-action="AddStudent">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Student Name">Student Name</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Student Name" name="StudentName">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Father Name">Father Name</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Father Name" name="FatherName">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Student Relation">Student Relation</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Student Relation" name="StudentRelation">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Email">Email</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Email" name="Email">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Religion">Religion</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Religion" name="Religion">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Nationality">Nationality</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Nationality" name="Nationality">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label for="Gender">Gender</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Gender" name="Gender">
+                                                <div class="form-control-feedback bg-dark bgwidth ">
+                                                    <i class="icon-sort-numberic-desc iconwidth"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label>Registration Number</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Registration Number" name="RegistrationNo" id="reg_No">
+                                                <div class="form-control-feedback bg-dark">
+                                                    <i class="icon-sort-numberic-desc "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label>Student CNIC</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Student CNIC" name="StudentCNIC" id="cnic">
+                                                <div class="form-control-feedback bg-dark">
+                                                    <i class="icon-sort-numberic-desc "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label>Domicile</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Domicile" name="Domicile" id="Dom">
+                                                <div class="form-control-feedback bg-dark">
+                                                    <i class="icon-sort-numberic-desc "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 has-feedback">
+                                            <label>Phone</label>
+                                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                                <input type="text" class="form-control" placeholder="Phone" name="Phone" id="Pno">
+                                                <div class="form-control-feedback bg-dark">
+                                                    <i class="icon-sort-numberic-desc "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-sm-12 ">
+                                            <a asp-action="Index" class="btn btn-info float-left ">Back to List</a>
+                                            <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-sm-12">
+                                                <input type="submit" value="Create" id="submitData" class="btn btn-outline-danger float-right ">
+                                            </div>
+                                            <a asp-action="Index" class="btn btn-info float-left ">Back to List</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <p class="mr-5">
+
+
+    </p>
+    <table class="table table-bordered table-success w-100" id="MyTable">
+        <thead class="thead-light">
+            <tr>
+
+                <th scope="col">Id</th>
+                <th scope="col">Studentname</th>
+                <th scope="col">Fathername</th>
+                <th scope="col">Studentrelation</th>
+                <th scope="col">Email</th>
+                <th scope="col">Religion</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Gender</th>
+                <th scope="col">REgistrationNo</th>
+                <th scope="col">StudentCNIC</th>
+                <th scope="col">Domiclie</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.FatherName</td>
+                    <td>@item.StudentRelation</td>
+                    <td>@item.Email</td>
+                    <td>@item.Religion</td>
+                    <td>@item.Nationality</td>
+                    <td>@item.Gender</td>
+                    <td>@item.RegistrationNo</td>
+                    <td>@item.StudentCNIC</td>
+                    <td>@item.Domicile</td>
+                    <td>@item.Phone</td>
+
+                    <td class="ggg">
+                        <a asp-action="Edit" class="btn btn-bordered btn-success mb-2" onclick="return confirm('Are you sure to update')" asp-route-id="@item.Id">Edit</a>
+
+                        <a asp-action="Delete" class="btn btn-bordered btn-danger" onclick="return confirm('Are you sure to Delete')" asp-route-id="@item.Id">Delete</a>
+
+
+                    </td>
+                </tr>
+            }
+
+
+
+        </tbody>
+
+
+    </table>
+    </section>
+
+
